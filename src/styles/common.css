@@ -1,0 +1,130 @@
+:root {
+  --theme-color: #39f;
+  --change-time: 0.3s;
+}
+/* 浮动清除 */
+.clearfix::after {
+  clear: both;
+  height: 0;
+  content: '.';
+  visibility: hidden;
+  display: block;
+}
+body {
+  height: 100%;
+}
+a {
+  color: #fff;
+  transition: background-color var(--change-time);
+  /* opacity: 0.5; */
+}
+a:hover {
+  /* color: #555; */
+  opacity: 1;
+}
+
+/* 输入框系列 */
+
+[type="text"], [type="password"], [type="number"], textarea {
+  padding: 0 8px;
+  width: 150px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all var(--theme-color);
+}
+
+[type="text"]:hover, [type="password"]:hover, [type="number"]:hover, textarea:hover {
+  border: 1px solid #999;
+}
+
+[type="text"]:focus, [type="password"]:focus, [type="number"]:focus, textarea:focus {
+  border: 1px solid #333;
+}
+
+/* 修改提示字颜色 */
+
+input::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+input:-moz-placeholder {
+  color: #ddd;
+}
+
+input::-moz-placeholder {
+  color: #ddd;
+}
+
+input::-ms-input-placeholder {
+  color: #ddd;
+}
+
+/* 按钮系列 */
+
+[type="button"], [type="submit"], button {
+  padding: 0 5px;
+  /* background: #b4d7ff; */
+  background-color: var(--theme-color);
+  border: none;
+  line-height: 1.5;
+  outline: none;
+  color: #fff;
+  transition: background-color var(--change-time), color var(--theme-color);
+}
+
+[type="button"]:hover, [type="submit"]:hover, button:hover {
+  background-color: #88B6F2;
+  color: #dfeeff;
+}
+
+[type="button"]:active, [type="submit"]:active, button:active {
+  background: #5096F2;
+  color: #fff;
+}
+
+/* 图片系列 */
+
+/* 图片没有src时的处理 */
+
+img[src=""], img:not([src]) {
+  opacity: 0;
+}
+
+#verifyImg {
+  border: 1px #ccc solid;
+  border-radius: 3px;
+  transition: opacity var(--theme-color);
+}
+
+/* 返回头部 */
+
+#goTop {
+  box-sizing: border-box;
+  padding: 2.5px 5px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  border: 1px #ccc solid;
+  text-align: center;
+  /* line-height: 1.5; */
+  opacity: 0;
+  background-color: #fff;
+  transition: opacity var(--theme-color);
+  cursor: pointer;
+}
+
+#goTop:hover {
+  background-color: #ddd;
+}
+
+#goTop:active {
+  background: #ccc;
+}
+
+#goTop.on {
+  opacity: 1;
+}
